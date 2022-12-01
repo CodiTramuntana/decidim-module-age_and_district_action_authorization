@@ -52,6 +52,19 @@ Decidim::Verifications.register_workflow(:authorization_handler) do |workflow|
 end
 ```
 
+Add translations for these optional attributes under the handler scope. For example, if the handler is named AsdfAuthorizationHandler (namespace is ignored) translations must go under:
+
+```
+en:
+  decidim:
+    authorization_handlers:
+      asdf_authorization_handler:
+        fields:
+          allowed_districts: Allowed districts
+          min_age: Minimum age
+          max_age: Maximum age
+```
+
 ### Run tests
 
 Create a dummy app in your application (not in the module):

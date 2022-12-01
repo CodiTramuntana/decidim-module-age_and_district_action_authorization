@@ -5,7 +5,7 @@ $LOAD_PATH.push File.expand_path("lib", __dir__)
 require "decidim/age_and_district_action_authorization/version"
 
 Gem::Specification.new do |s|
-  s.name = "decidim-module-age_and_district_action_authorization"
+  s.name = "decidim-age_and_district_action_authorization"
   s.version = Decidim::AgeAndDistrictActionAuthorization::VERSION
   s.authors = ["Oliver Valls"]
   s.email = ["oliver.vh@coditramuntana.com"]
