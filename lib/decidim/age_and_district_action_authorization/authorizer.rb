@@ -16,7 +16,7 @@ module Decidim
       end
 
       def missing_age_in_metadata?
-        has_age_restrictions = (["max_age", "min_age"] & options.keys)
+        has_age_restrictions = (%w(max_age min_age) & options.keys)
         authorization.metadata["birthdate"].blank? if has_age_restrictions
       end
 

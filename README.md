@@ -9,17 +9,17 @@ No authorization handler is provided with this module, only an Authorizer based 
 
 The `Decidim::AgeAndDistrictActionAuthorization::Authorizer` checks a metadata field named _birthday_ in the  AuthorizationHandler used and compares the value against a minimum/maximum age defined in the permissions provided JSON for the action authorizer. The JSON fields are named _min_age_ and _max_age_.
 
-E.g permission options: `{"min_age": 20 }`.
+E.g permission options: `{ "min_age": 20 }`.
 
 By default the minimum age is 18 years old if no JSON options are provided, so this authorization always applies once installed.
 
 The `Decidim::AgeAndDistrictActionAuthorization::Authorizer` also checks for a metadata field named _district_ in the  AuthorizationHandler used and compares the value against a districts list defined in the provided JSON for the action authorizer. The JSON field is named _allowed_districts_.
 
-E.g. permission options: `{"allowed_districts": 17481 }`.
+E.g. permission options: `{ "allowed_districts": 17481 }`.
 
 Both restrictions may also be combined
 
-E.g. permission options: `{"min_age": 10, "max_age": 25, "allowed_districts": [08080, 08081] }`.
+E.g. permission options: `{ "min_age": 10, "max_age": 25, "allowed_districts": [08080, 08081] }`.
 
 ## Installation
 
