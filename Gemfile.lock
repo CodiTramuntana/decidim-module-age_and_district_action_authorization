@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     decidim-module-age_and_district_action_authorization (0.0.1)
-      decidim (>= 0.26.0)
+      decidim (>= 0.24.0)
 
 GEM
   remote: https://rubygems.org/
@@ -750,8 +750,8 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  decidim (>= 0.26)
-  decidim-dev (>= 0.26.0)
+  decidim (>= 0.24)
+  decidim-dev (>= 0.24.0)
   decidim-module-age_and_district_action_authorization!
   faker
   listen

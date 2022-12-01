@@ -6,10 +6,10 @@ gemspec
 
 group :development, :test do
   gem "bootsnap"
-  gem "decidim", ">= 0.26"
+  gem "decidim", ">= 0.24"
+  gem "faker"
   gem "listen"
   gem "pry"
-  gem "pry-rails"
   gem "pry-byebug"
-  gem "faker"
+  gem "pry-rails"
 end
