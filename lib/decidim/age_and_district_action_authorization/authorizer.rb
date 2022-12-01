@@ -51,8 +51,8 @@ module Decidim
       end
 
       def district_match?
-        allowed= Array(options["allowed_districts"])
-        return true unless allowed.any?
+        allowed= options["allowed_districts"]&.split(",")&.map { |d| d.strip }
+        return true unless allowed&.present?
 
         user_district= authorization.metadata["district"]
 

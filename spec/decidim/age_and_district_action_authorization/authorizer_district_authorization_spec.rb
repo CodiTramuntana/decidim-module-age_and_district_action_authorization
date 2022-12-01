@@ -21,12 +21,12 @@ RSpec.describe Decidim::AgeAndDistrictActionAuthorization::Authorizer do
 
   context "when allowing a list of districts" do
     it "authorizes with district metadata" do
-      authorizer = authorizer_class.new(authorization_for("17600"), { "allowed_districts" => %w(17600 17740) }, component, resource)
+      authorizer = authorizer_class.new(authorization_for("17600"), { "allowed_districts" => "17600, 17740" }, component, resource)
       expect(authorizer.authorize).to include(:ok)
     end
 
     it "does not authorize when district metadata unmatch" do
-      authorizer = authorizer_class.new(authorization_for("17600"), { "allowed_districts" => %w(08080 99999) }, component, resource)
+      authorizer = authorizer_class.new(authorization_for("17600"), { "allowed_districts" => "08080, 99999" }, component, resource)
       expect(authorizer.authorize).to include(:unauthorized)
     end
   end
@@ -41,13 +41,13 @@ RSpec.describe Decidim::AgeAndDistrictActionAuthorization::Authorizer do
   end
 
   it "does not authorize the user if districts are defined but the authorization is not present" do
-    authorizer_without_authorization = authorizer_class.new(nil, { "allowed_districts" => ["17600"] }, component, resource)
+    authorizer_without_authorization = authorizer_class.new(nil, { "allowed_districts" => "17600" }, component, resource)
 
     expect(authorizer_without_authorization.authorize).to include(:missing)
   end
 
   it "does not authorize the user if districts are defined but the metadata is empty" do
-    authorizer_without_authorization = authorizer_class.new(authorization_for(""), { "allowed_districts" => %w(17600 00671) }, component, resource)
+    authorizer_without_authorization = authorizer_class.new(authorization_for(""), { "allowed_districts" => "17600, 00671" }, component, resource)
 
     expect(authorizer_without_authorization.authorize).to include(:unauthorized)
   end
