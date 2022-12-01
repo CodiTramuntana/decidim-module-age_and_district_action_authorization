@@ -3,7 +3,7 @@ name: "[CI] Lint code"
 on:
   push:
     branches:
-      - master
+      - main
       - release/*
       - "*-stable"
   pull_request:
