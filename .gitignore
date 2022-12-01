@@ -1,0 +1,11 @@
+.byebug_history
+
+# Ignore env variables
+.env
+.env.*
+!.env.example
+.vscode/
+.DS_Store
+**/*.rspec-failures
+spec/decidim_dummy_app/
+
